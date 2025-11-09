@@ -498,27 +498,82 @@
         </div>
     </section>
 
-    <script>
-        function scrollToSequence(sequenceNumber) {
-            document.getElementById(`sequence-${sequenceNumber}`).scrollIntoView({ 
-                behavior: 'smooth' 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const enterBtn = document.querySelector(".enter-btn");
+    const sequence0 = document.getElementById("sequence-0");
+    const audio = new Audio("assets/sound/intro.mp3"); // optionnel : musique d’intro
+    let hasEntered = false;
+
+    // --- FONCTION : transition cinématique vers la séquence suivante
+    function scrollToSequence(sequenceNumber) {
+        if (hasEntered) return;
+        hasEntered = true;
+
+        // Lecture du son d’intro (optionnel)
+        audio.volume = 0.3;
+        audio.play().catch(() => {}); // ignore les bloqueurs auto-play
+
+        // Effet de fondu au noir progressif
+        sequence0.style.transition = "opacity 2.5s ease";
+        sequence0.style.opacity = "0";
+
+        // Scroll fluide après le fondu
+        setTimeout(() => {
+            document.getElementById(`sequence-${sequenceNumber}`).scrollIntoView({
+                behavior: "smooth"
             });
-        }
-        
-        function fadeToBlack() {
-            document.body.classList.add('fade-out');
-            setTimeout(() => {
-                alert("Merci d'avoir visité mon portfolio !");
-                document.body.classList.remove('fade-out');
-            }, 3000);
-        }
-        
-        // Effet de parallaxe léger
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const sequence0 = document.getElementById('sequence-0');
-            sequence0.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
-        });
-    </script>
+            sequence0.style.display = "none";
+        }, 2500);
+    }
+
+    // --- FONCTION : effet de fondu final (crédits)
+    function fadeToBlack() {
+        document.body.classList.add("fade-out");
+        const overlay = document.createElement("div");
+        overlay.style.position = "fixed";
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = "100%";
+        overlay.style.height = "100%";
+        overlay.style.backgroundColor = "#000";
+        overlay.style.zIndex = 9999;
+        overlay.style.opacity = 0;
+        overlay.style.transition = "opacity 2.5s ease";
+        document.body.appendChild(overlay);
+
+        requestAnimationFrame(() => (overlay.style.opacity = 1));
+
+        setTimeout(() => {
+            overlay.innerHTML = `
+                <div style="
+                    color: #f5f1e8;
+                    font-family: 'Cinzel', serif;
+                    text-align: center;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 24px;
+                    letter-spacing: 2px;">
+                    🎬 Merci d’avoir visionné ce portfolio 🎬<br><br>
+                    <span style="font-size:16px; opacity:0.8;">Réalisation : Leon Cosmos</span>
+                </div>`;
+        }, 2000);
+    }
+
+    // --- Effet de parallaxe plus fluide
+    window.addEventListener("scroll", () => {
+        const scrolled = window.scrollY * 0.3;
+        sequence0.style.transform = `translateY(${scrolled}px) scale(1.02)`;
+        sequence0.style.transition = "transform 0.1s linear";
+    });
+
+    // Rendre accessible la fonction dans le HTML inline
+    window.scrollToSequence = scrollToSequence;
+    window.fadeToBlack = fadeToBlack;
+});
+</script>
+
 </body>
 </html>
