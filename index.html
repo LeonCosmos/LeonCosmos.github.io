@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Cinématographique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Variables et styles de base */
+        :root {
+            --beige-light: #f5f1e8;
+            --beige-medium: #e8e2d3;
+            --text-dark: #2a2a2a;
+            --transition-slow: 1.2s ease;
+            --transition-medium: 0.8s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--beige-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        h1 {
+            font-size: 36px;
+        }
+        
+        h2 {
+            font-size: 32px;
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            font-size: 24px;
+        }
+        
+        p, li {
+            font-size: 17px;
+        }
+        
+        section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.7;
+        }
+        
+        /* SÉQUENCE 0 - GÉNÉRIQUE D'OUVERTURE */
+        #sequence-0 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(245, 241, 232, 0.9), rgba(245, 241, 232, 0.9)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%232a2a2a" stroke-width="0.5" opacity="0.1"/></svg>');
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .star-wars-intro {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            perspective: 400px;
+            overflow: hidden;
+        }
+        
+        .crawl {
+            position: absolute;
+            top: 0;
+            left: 15%;
+            width: 70%;
+            font-size: 300%;
+            text-align: justify;
+            transform-origin: 50% 100%;
+            animation: crawl 60s linear;
+        }
+        
+        @keyframes crawl {
+            0% {
+                top: 100vh;
+                transform: rotateX(20deg) translateZ(0);
+            }
+            100% {
+                top: -500vh;
+                transform: rotateX(25deg) translateZ(-1000px);
+            }
+        }
+        
+        .enter-btn {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background-color: transparent;
+            border: 1px solid var(--text-dark);
+            color: var(--text-dark);
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .enter-btn:hover {
+            background-color: var(--text-dark);
+            color: var(--beige-light);
+        }
+        
+        /* SÉQUENCE 1 - PROJETS */
+        #sequence-1 {
+            background-color: var(--beige-medium);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: var(--beige-light);
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-media {
+            height: 200px;
+            background-color: #ddd;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #777;
+        }
+        
+        /* SÉQUENCE 2 - À PROPOS */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 400px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #777;
+        }
+        
+        .collaborations {
+            margin-top: 2rem;
+        }
+        
+        .logos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .logo-placeholder {
+            width: 100px;
+            height: 60px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #777;
+        }
+        
+        .cv-download {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--text-dark);
+            color: var(--beige-light);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            transition: opacity 0.3s;
+        }
+        
+        .cv-download:hover {
+            opacity: 0.8;
+        }
+        
+        /* SÉQUENCE 3 - ARCHIVES */
+        #sequence-3 {
+            background-color: var(--beige-medium);
+        }
+        
+        .archives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .archive-item {
+            background-color: var(--beige-light);
+            padding: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .archive-year {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* SÉQUENCE 4 - JOURNAL */
+        .journal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .journal-entry {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .entry-date {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* SÉQUENCE 5 - CONTACT */
+        #sequence-5 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: var(--text-dark);
+            color: var(--beige-light);
+        }
+        
+        .contact-info {
+            margin: 2rem 0;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            color: var(--beige-light);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .social-link:hover {
+            opacity: 0.7;
+        }
+        
+        .fade-out {
+            animation: fadeOut 3s forwards;
+        }
+        
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                padding: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#sequence-1">Séquence 1</a></li>
+            <li><a href="#sequence-2">Séquence 2</a></li>
+            <li><a href="#sequence-3">Séquence 3</a></li>
+            <li><a href="#sequence-4">Séquence 4</a></li>
+            <li><a href="#sequence-5">Crédits</a></li>
+        </ul>
+    </nav>
+
+    <!-- SÉQUENCE 0 - GÉNÉRIQUE D'OUVERTURE -->
+    <section id="sequence-0">
+        <div class="star-wars-intro">
+            <div class="crawl">
+                <h1>MON PORTFOLIO</h1>
+                <p>Il y a bien longtemps, dans une galaxie pas si lointaine...</p>
+                <p>Un créatif passionné par l'univers cinématographique a décidé de concevoir son portfolio comme une expérience immersive.</p>
+                <p>À travers ces pages, vous découvrirez des projets soigneusement sélectionnés, des explorations visuelles et des réflexions personnelles.</p>
+                <p>Chaque section a été pensée comme une séquence de film, avec son propre rythme et son ambiance.</p>
+                <p>Préparez-vous à plonger dans mon univers créatif...</p>
+            </div>
+        </div>
+        <button class="enter-btn" onclick="scrollToSequence(1)">Entrer dans mes yeux</button>
+    </section>
+
+    <!-- SÉQUENCE 1 - PROJETS -->
+    <section id="sequence-1">
+        <div class="container">
+            <h2>SÉQUENCE 1 - PROJETS</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-media">VIDÉO / EXTRAIT</div>
+                    <h3>Projet Récent</h3>
+                    <p>Court-métrage expérimental - 12 min</p>
+                    <p>Une exploration des frontières entre rêve et réalité.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-media">PHOTOS DE TOURNAGE</div>
+                    <h3>Projet Marquants</h3>
+                    <p>Série documentaire - 45 min</p>
+                    <p>Portrait intime d'une communauté méconnue.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-media">CROQUIS / STORYBOARD</div>
+                    <h3>Origines</h3>
+                    <p>Premier court-métrage - 8 min</p>
+                    <p>L'humain face à la technologie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SÉQUENCE 2 - À PROPOS -->
+    <section id="sequence-2">
+        <div class="container">
+            <h2>SÉQUENCE 2 - À PROPOS</h2>
+            <div class="about-content">
+                <div>
+                    <div class="profile-img">PHOTO DE PROFIL</div>
+                </div>
+                <div>
+                    <h3>Bio</h3>
+                    <p>Créateur visuel passionné par la narration cinématographique. Mon approche combine sensibilité artistique et rigueur technique pour donner vie à des histoires qui résonnent.</p>
+                    
+                    <div class="collaborations">
+                        <h3>Collaborations</h3>
+                        <div class="logos-container">
+                            <div class="logo-placeholder">LOGO 1</div>
+                            <div class="logo-placeholder">LOGO 2</div>
+                            <div class="logo-placeholder">LOGO 3</div>
+                            <div class="logo-placeholder">LOGO 4</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="cv-download">Télécharger mon CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SÉQUENCE 3 - ARCHIVES & EXPLORATIONS -->
+    <section id="sequence-3">
+        <div class="container">
+            <h2>SÉQUENCE 3 - ARCHIVES & EXPLORATIONS</h2>
+            <p>Cette section retrace mes débuts et les recherches qui ont façonné mon parcours créatif.</p>
+            
+            <div class="archives-grid">
+                <div class="archive-item">
+                    <div class="archive-year">2023</div>
+                    <p>Expérimentations avec la lumière naturelle</p>
+                </div>
+                <div class="archive-item">
+                    <div class="archive-year">2022</div>
+                    <p>Projets collaboratifs et installations</p>
+                </div>
+                <div class="archive-item">
+                    <div class="archive-year">2021</div>
+                    <p>Premiers essais en motion design</p>
+                </div>
+                <div class="archive-item">
+                    <div class="archive-year">2020</div>
+                    <p>Photographie documentaire</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SÉQUENCE 4 - JOURNAL / CARNET -->
+    <section id="sequence-4">
+        <div class="container">
+            <h2>SÉQUENCE 4 - JOURNAL / CARNET</h2>
+            <div class="journal-grid">
+                <div class="journal-entry">
+                    <div class="entry-date">15 mars 2023</div>
+                    <h3>Critique : Dune - Partie 2</h3>
+                    <p>Une maîtrise visuelle exceptionnelle qui transcende le blockbuster hollywoodien...</p>
+                </div>
+                <div class="journal-entry">
+                    <div class="entry-date">8 mars 2023</div>
+                    <h3>Inspiration : La photographie argentique</h3>
+                    <p>Retour aux sources avec la découverte du travail de Saul Leiter...</p>
+                </div>
+                <div class="journal-entry">
+                    <div class="entry-date">1 mars 2023</div>
+                    <h3>Réflexion : Narration non-linéaire</h3>
+                    <p>Comment raconter une histoire sans suivre la chronologie traditionnelle...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SÉQUENCE 5 - CONTACT -->
+    <section id="sequence-5">
+        <div class="container">
+            <h2>CRÉDITS</h2>
+            <div class="contact-info">
+                <p>Merci d'avoir visionné mon portfolio</p>
+                <p>Pour toute collaboration ou échange</p>
+                <p>email@example.com</p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">Vimeo</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">YouTube</a>
+            </div>
+            <button class="enter-btn" onclick="fadeToBlack()">Fermer</button>
+        </div>
+    </section>
+
+    <script>
+        function scrollToSequence(sequenceNumber) {
+            document.getElementById(`sequence-${sequenceNumber}`).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        function fadeToBlack() {
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                alert("Merci d'avoir visité mon portfolio !");
+                document.body.classList.remove('fade-out');
+            }, 3000);
+        }
+        
+        // Effet de parallaxe léger
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const sequence0 = document.getElementById('sequence-0');
+            sequence0.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
+        });
+    </script>
+</body>
+</html>
