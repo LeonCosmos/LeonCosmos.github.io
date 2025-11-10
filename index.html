@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Cinématographique</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-
         /* S'assurer que le body n'a pas de défilement initial */
-body {
-    overflow: hidden;
-}
+        body {
+            overflow: hidden;
+        }
 
-/* S'assurer que seule la séquence 0 est visible */
-body:not(.content-revealed) #sequence-1,
-body:not(.content-revealed) #sequence-2,
-body:not(.content-revealed) #sequence-3,
-body:not(.content-revealed) #sequence-4,
-body:not(.content-revealed) #sequence-5 {
-    display: none !important;
-}
+        /* S'assurer que seule la séquence 0 est visible */
+        body:not(.content-revealed) #sequence-1,
+        body:not(.content-revealed) #sequence-2,
+        body:not(.content-revealed) #sequence-3,
+        body:not(.content-revealed) #sequence-4,
+        body:not(.content-revealed) #sequence-5 {
+            display: none !important;
+        }
 
-/* Classe qui sera ajoutée au body quand le contenu est révélé */
-body.content-revealed {
-    overflow: auto;
-}
+        /* Classe qui sera ajoutée au body quand le contenu est révélé */
+        body.content-revealed {
+            overflow: auto;
+        }
 
         /* Variables et styles de base */
         :root {
@@ -37,60 +38,64 @@ body.content-revealed {
             --gold: #d4af37;
             --silver: #c0c0c0;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--text-dark);
+            background-color: #000;
             color: var(--beige-light);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
-        h1, h2, h3, h4 {
+
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: 'Cinzel', serif;
             font-weight: 500;
             letter-spacing: 0.5px;
         }
-        
+
         h1 {
             font-size: 36px;
         }
-        
+
         h2 {
             font-size: 32px;
             margin-bottom: 2rem;
         }
-        
+
         h3 {
             font-size: 24px;
         }
-        
-        p, li {
+
+        p,
+        li {
             font-size: 17px;
         }
-        
+
         section {
             min-height: 100vh;
             padding: 4rem 2rem;
             position: relative;
             overflow: hidden;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         /* Masquer toutes les sections sauf l'intro au départ */
         #sequence-1,
         #sequence-2,
@@ -101,12 +106,12 @@ body.content-revealed {
             opacity: 0;
             transition: opacity 1.5s ease;
         }
-        
+
         .content-visible {
             display: block !important;
             opacity: 1 !important;
         }
-        
+
         /* Navigation - cachée au départ */
         nav {
             position: fixed;
@@ -118,22 +123,22 @@ body.content-revealed {
             opacity: 0;
             transform: translateY(-100%);
         }
-        
+
         nav.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         nav.hidden {
             transform: translateY(-100%);
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 1.5rem;
         }
-        
+
         nav a {
             color: var(--beige-light);
             text-decoration: none;
@@ -142,7 +147,7 @@ body.content-revealed {
             position: relative;
             padding: 0.5rem 0;
         }
-        
+
         nav a::after {
             content: '';
             position: absolute;
@@ -153,15 +158,15 @@ body.content-revealed {
             background-color: var(--gold);
             transition: width 0.3s ease;
         }
-        
+
         nav a:hover {
             color: var(--gold);
         }
-        
+
         nav a:hover::after {
             width: 100%;
         }
-        
+
         /* SÉQUENCE 0 - GÉNÉRIQUE D'OUVERTURE */
         #sequence-0 {
             display: flex;
@@ -169,7 +174,7 @@ body.content-revealed {
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1489599809505-fb40ebc6fbc1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1489599809505-fb40ebc6fbc1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             color: var(--beige-light);
@@ -178,7 +183,7 @@ body.content-revealed {
             padding-bottom: 10%;
             height: 100vh;
         }
-        
+
         .cinematic-intro {
             position: relative;
             height: 100%;
@@ -189,7 +194,7 @@ body.content-revealed {
             align-items: center;
             overflow: hidden;
         }
-        
+
         .intro-title {
             font-size: 72px;
             opacity: 0;
@@ -198,41 +203,57 @@ body.content-revealed {
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
             margin-bottom: 2rem;
         }
-        
+
         .intro-text {
-            position: relative;
-            font-size: 24px;
-            margin: 20px 0;
-            opacity: 0;
-            transform: translateY(30px);
+        position: relative;
+        font-size: 30px; /* Ta nouvelle taille */
+        margin: 25px 0; /* Augmenté la marge pour l'espacement */
+        color: rgba(245,241,232,0.95);
         }
-        
-        .intro-text:nth-child(2) { animation: textReveal 0.8s forwards 1s; }
-        .intro-text:nth-child(3) { animation: textReveal 0.8s forwards 1.5s; }
-        .intro-text:nth-child(4) { animation: textReveal 0.8s forwards 2s; }
-        
+
         @keyframes titleReveal {
-            0% {
-                opacity: 0;
-                transform: scale(1.5);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+            0% { opacity: 0; transform: scale(1.5); }
+            100% { opacity: 1; transform: scale(1); }
         }
-        
-        @keyframes textReveal {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
+
+        /* --- Crawl (style "Star Wars" appliqué aux lignes d'intro) --- */
+.crawl-wrap {
+    position: relative;
+    width: 70%;
+    perspective: 800px;
+    height: 40vh; /* Ajusté */
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+
+.crawl {
+    position: absolute;
+    bottom: -10%; /* Ajusté entre -5% et -15% */
+    width: 100%;
+    transform-origin: 50% 100%;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    opacity: 1;
+    animation: crawl 18s linear forwards;
+    -webkit-font-smoothing: antialiased;
+}
+
+        .crawl .intro-text { opacity: 1; transform: none; margin: 0.8rem 0; }
+
+
+@keyframes crawl {
+    0% {
+        transform: translateY(100%) rotateX(20deg) translateZ(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-280%) rotateX(25deg) translateZ(-400px); /* Réduit significativement */
+        opacity: 1;
+    }
+}
+
         .film-grain {
             position: absolute;
             top: 0;
@@ -244,49 +265,62 @@ body.content-revealed {
             pointer-events: none;
             z-index: 1;
         }
-        
+
         .glitch-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.15) 0px,
-                rgba(0, 0, 0, 0.15) 1px,
-                transparent 1px,
-                transparent 2px
-            );
+            background: repeating-linear-gradient(0deg,
+                    rgba(0, 0, 0, 0.15) 0px,
+                    rgba(0, 0, 0, 0.15) 1px,
+                    transparent 1px,
+                    transparent 2px);
             pointer-events: none;
             animation: glitch 0.6s infinite;
             opacity: 0.5;
             z-index: 2;
         }
-        
+
         @keyframes glitch {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-2px); }
-            50% { transform: translateX(2px); }
-            75% { transform: translateX(-1px); }
-            100% { transform: translateX(0); }
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-2px);
+            }
+
+            50% {
+                transform: translateX(2px);
+            }
+
+            75% {
+                transform: translateX(-1px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
         }
-        
-        .enter-btn {
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background-color: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            font-family: 'Cinzel', serif;
-            font-size: 18px;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-            z-index: 10;
-            overflow: hidden;
-        }
-        
+
+.enter-btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    opacity: 1; /* Changé de 0 à 1 */
+    /* Supprimer l'animation fadeInButton */
+}
         .enter-btn::before {
             content: '';
             position: absolute;
@@ -297,52 +331,52 @@ body.content-revealed {
             background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
             transition: left 0.5s;
         }
-        
+
         .enter-btn:hover {
             background-color: var(--gold);
-            color: var(--text-dark);
+            color: #000;
         }
-        
+
         .enter-btn:hover::before {
             left: 100%;
         }
-        
+
         /* SÉQUENCE 1 - PROJETS */
         #sequence-1 {
-            background-color: var(--text-dark);
+            background-color: #000;
             position: relative;
         }
-        
+
         .sequence-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1489599809505-fb40ebc6fbc1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1489599809505-fb40ebc6fbc1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             z-index: -1;
         }
-        
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
-        
+
         .project-card {
             background-color: rgba(42, 42, 42, 0.7);
             padding: 1.5rem;
             border-radius: 4px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.5s;
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(212, 175, 55, 0.2);
         }
-        
+
         .project-card::before {
             content: '';
             position: absolute;
@@ -354,16 +388,16 @@ body.content-revealed {
             transform: translateX(-100%);
             transition: transform 0.6s;
         }
-        
+
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
         }
-        
+
         .project-card:hover::before {
             transform: translateX(100%);
         }
-        
+
         .project-media {
             height: 200px;
             background-color: #333;
@@ -376,7 +410,7 @@ body.content-revealed {
             position: relative;
             overflow: hidden;
         }
-        
+
         .project-media::after {
             content: '';
             position: absolute;
@@ -387,29 +421,34 @@ body.content-revealed {
             background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
             transform: translateX(-100%);
         }
-        
+
         .project-card:hover .project-media::after {
             animation: shimmer 1.5s;
         }
-        
+
         @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
-        
+
         /* SÉQUENCE 2 - À PROPOS */
         #sequence-2 {
-            background-color: var(--text-dark);
+            background-color: #000;
             position: relative;
         }
-        
+
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
         }
-        
+
         .profile-img {
             width: 100%;
             height: 400px;
@@ -423,7 +462,7 @@ body.content-revealed {
             overflow: hidden;
             border-radius: 4px;
         }
-        
+
         .profile-img::before {
             content: '';
             position: absolute;
@@ -434,22 +473,22 @@ body.content-revealed {
             background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
             transform: translateX(-100%);
         }
-        
+
         .profile-img:hover::before {
             animation: shimmer 1.5s;
         }
-        
+
         .collaborations {
             margin-top: 2rem;
         }
-        
+
         .logos-container {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
             margin-top: 1rem;
         }
-        
+
         .logo-placeholder {
             width: 100px;
             height: 60px;
@@ -462,12 +501,12 @@ body.content-revealed {
             transition: all 0.3s;
             border-radius: 4px;
         }
-        
+
         .logo-placeholder:hover {
             transform: scale(1.1);
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
-        
+
         .cv-download {
             display: inline-block;
             margin-top: 1.5rem;
@@ -481,7 +520,7 @@ body.content-revealed {
             position: relative;
             overflow: hidden;
         }
-        
+
         .cv-download::before {
             content: '';
             position: absolute;
@@ -494,91 +533,93 @@ body.content-revealed {
         }
 
         #sequence-5 {
-            min-height: 70vh; /* Au lieu de 100vh */
+            min-height: 70vh;
+            /* Au lieu de 100vh */
             /* ou */
             height: auto;
-            padding: 3rem 2rem; /* Réduire le padding */
+            padding: 3rem 2rem;
+            /* Réduire le padding */
         }
-        
+
         .cv-download:hover {
             background-color: var(--gold);
-            color: var(--text-dark);
+            color: #000;
         }
-        
+
         .cv-download:hover::before {
             left: 100%;
         }
-        
+
         /* SÉQUENCE 3 - ARCHIVES */
         #sequence-3 {
-            background-color: var(--text-dark);
+            background-color: #000;
             position: relative;
         }
-        
+
         .archives-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1.5rem;
         }
-        
+
         .archive-item {
             background-color: rgba(42, 42, 42, 0.7);
             padding: 1.5rem;
             border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(212, 175, 55, 0.1);
         }
-        
+
         .archive-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
         }
-        
+
         .archive-year {
             font-weight: bold;
             margin-bottom: 0.5rem;
             color: var(--gold);
         }
-        
+
         /* SÉQUENCE 4 - JOURNAL */
         #sequence-4 {
-            background-color: var(--text-dark);
+            background-color: #000;
             position: relative;
         }
-        
+
         .journal-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
-        
+
         .journal-entry {
             background-color: rgba(42, 42, 42, 0.7);
             padding: 1.5rem;
             border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(212, 175, 55, 0.1);
         }
-        
+
         .journal-entry:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
         }
-        
+
         .entry-date {
             font-size: 14px;
             color: var(--gold);
             margin-bottom: 0.5rem;
         }
-        
+
         /* SÉQUENCE 5 - CONTACT */
         #sequence-5 {
             display: flex;
@@ -586,16 +627,17 @@ body.content-revealed {
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1489599809505-fb40ebc6fbc1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1489599809505-fb40ebc6fbc1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             color: var(--beige-light);
             position: relative;
         }
-        
+
         .contact-info {
             margin: 2rem 0;
-            text-align: center; /* Centre le texte */
+            text-align: center;
+            /* Centre le texte */
             width: 100%;
         }
 
@@ -603,32 +645,33 @@ body.content-revealed {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            margin-top: 2rem; /* Plus d'espace au-dessus */
+            margin-top: 2rem;
+            /* Plus d'espace au-dessus */
             width: 100%;
         }
-        
+
         .social-link {
             color: var(--beige-light);
             text-decoration: none;
             transition: all 0.3s;
             font-size: 1.5rem;
         }
-        
+
         .social-link:hover {
             color: var(--gold);
             transform: translateY(-5px);
         }
-        
+
         .fade-out {
             animation: fadeOut 3s forwards;
         }
-        
+
         @keyframes fadeOut {
             to {
                 opacity: 0;
             }
         }
-        
+
         /* Effets de particules */
         .particles {
             position: absolute;
@@ -639,52 +682,56 @@ body.content-revealed {
             pointer-events: none;
             z-index: 0;
         }
-        
-.particle {
-    position: absolute;
-    background: rgba(212, 175, 55, 0.6);
-    border-radius: 50%;
-    animation: naturalFloat 10s infinite linear;
-    top: 100%;
-}
 
-@keyframes naturalFloat {
-    0% {
-        transform: translateY(0) translateX(0) scale(0.5);
-        opacity: 0;
-    }
-    5% {
-        opacity: 0.7;
-        transform: translateY(-5vh) translateX(10px) scale(1);
-    }
-    50% {
-        transform: translateY(-50vh) translateX(30px) scale(1.2);
-    }
-    95% {
-        opacity: 0.7;
-        transform: translateY(-95vh) translateX(50px) scale(1);
-    }
-    100% {
-        transform: translateY(-120vh) translateX(60px) scale(0.5);
-        opacity: 0;
-    }
-}
-        
+        .particle {
+            position: absolute;
+            background: rgba(212, 175, 55, 0.6);
+            border-radius: 50%;
+            animation: naturalFloat 10s infinite linear;
+            top: 100%;
+        }
+
+        @keyframes naturalFloat {
+            0% {
+                transform: translateY(0) translateX(0) scale(0.5);
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 0.7;
+                transform: translateY(-5vh) translateX(10px) scale(1);
+            }
+
+            50% {
+                transform: translateY(-50vh) translateX(30px) scale(1.2);
+            }
+
+            95% {
+                opacity: 0.7;
+                transform: translateY(-95vh) translateX(50px) scale(1);
+            }
+
+            100% {
+                transform: translateY(-120vh) translateX(60px) scale(0.5);
+                opacity: 0;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .about-content {
                 grid-template-columns: 1fr;
             }
-            
+
             nav {
                 padding: 1rem;
             }
-            
+
             nav ul {
                 flex-direction: column;
                 gap: 0.8rem;
             }
-            
+
             .intro-title {
                 font-size: 48px;
             }
@@ -693,16 +740,52 @@ body.content-revealed {
                 padding-bottom: 45%;
             }
         }
+
+/* Drop-shadow en bas de page */
+    .drop-shadow-bottom {
+        position: fixed;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 30px;
+        background: radial-gradient(ellipse at center, crimson -60%, transparent 55%);
+        filter: drop-shadow(0 0 1rem crimson);
+        pointer-events: none;
+        z-index: 9999;
+        border-radius: 50% 50% 0 0;
+        animation: dropShadowMove 3s linear infinite alternate;
+    }
+
+    @keyframes dropShadowMove {
+        0% {
+            left: 80%;
+        }
+        100% {
+            left: 20%;
+        }
+    }
+
+    /* Overlay for scroll-based global fade (pointer-events: none so interactions keep working) */
+    .scroll-fade-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0);
+        pointer-events: none;
+        transition: background-color 240ms linear;
+        z-index: 500; /* below nav (1000) but above page content */
+    }
     </style>
 </head>
+
 <body>
     <!-- Navigation - cachée au départ -->
     <nav id="main-nav">
         <ul>
-            <li><a href="#sequence-1">Séquence 1</a></li>
-            <li><a href="#sequence-2">Séquence 2</a></li>
-            <li><a href="#sequence-3">Séquence 3</a></li>
-            <li><a href="#sequence-4">Séquence 4</a></li>
+            <li><a href="#sequence-1">Scéne d'exposition</a></li>
+            <li><a href="#sequence-2">Le protagoniste</a></li>
+            <li><a href="#sequence-3">Coeur de l'intrigue</a></li>
+            <li><a href="#sequence-4">Prologue</a></li>
             <li><a href="#sequence-5">Crédits</a></li>
         </ul>
     </nav>
@@ -713,10 +796,14 @@ body.content-revealed {
         <div class="glitch-overlay"></div>
         <div class="particles" id="particles-0"></div>
         <div class="cinematic-intro">
-            <h1 class="intro-title">PORTFOLIO Louis</h1>
-            <p class="intro-text">Bienvenue dans mon univers cinématographique</p>
-            <p class="intro-text">Découvrez mes créations visuelles et narratives</p>
-            <p class="intro-text">Une expérience immersive vous attend</p>
+            <h1 class="intro-title">Louis LEROUZIC</h1>
+            <div class="crawl-wrap">
+                <div class="crawl">
+                    <p class="intro-text">Bienvenue dans mon univers cinématographique</p>
+                    <p class="intro-text">Découvrez mes créations visuelles et narratives</p>
+                    <p class="intro-text">Une expérience immersive vous attend</p>
+                </div>
+            </div>
         </div>
         <button class="enter-btn" onclick="revealContent()">Commencer l'expérience</button>
     </section>
@@ -726,7 +813,7 @@ body.content-revealed {
         <div class="sequence-bg"></div>
         <div class="particles" id="particles-1"></div>
         <div class="container">
-            <h2>SÉQUENCE 1 - PROJETS</h2>
+            <h2>SCENE D'EXPOSITION</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-media">VIDÉO / EXTRAIT</div>
@@ -755,15 +842,16 @@ body.content-revealed {
         <div class="sequence-bg"></div>
         <div class="particles" id="particles-2"></div>
         <div class="container">
-            <h2>SÉQUENCE 2 - À PROPOS</h2>
+            <h2>LE PROTAGONISTE</h2>
             <div class="about-content">
                 <div>
                     <div class="profile-img">PHOTO DE PROFIL</div>
                 </div>
                 <div>
                     <h3>Bio</h3>
-                    <p>Créateur visuel passionné par la narration cinématographique. Mon approche combine sensibilité artistique et rigueur technique pour donner vie à des histoires qui résonnent.</p>
-                    
+                    <p>Créateur visuel passionné par la narration cinématographique. Mon approche combine sensibilité
+                        artistique et rigueur technique pour donner vie à des histoires qui résonnent.</p>
+
                     <div class="collaborations">
                         <h3>Collaborations</h3>
                         <div class="logos-container">
@@ -773,7 +861,7 @@ body.content-revealed {
                             <div class="logo-placeholder">LOGO 4</div>
                         </div>
                     </div>
-                    
+
                     <a href="#" class="cv-download">Télécharger mon CV</a>
                 </div>
             </div>
@@ -785,9 +873,9 @@ body.content-revealed {
         <div class="sequence-bg"></div>
         <div class="particles" id="particles-3"></div>
         <div class="container">
-            <h2>SÉQUENCE 3 - ARCHIVES & EXPLORATIONS</h2>
+            <h2>COEUR DE L'INTRIGUE</h2>
             <p>Cette section retrace mes débuts et les recherches qui ont façonné mon parcours créatif.</p>
-            
+
             <div class="archives-grid">
                 <div class="archive-item">
                     <div class="archive-year">2023</div>
@@ -814,7 +902,7 @@ body.content-revealed {
         <div class="sequence-bg"></div>
         <div class="particles" id="particles-4"></div>
         <div class="container">
-            <h2>SÉQUENCE 4 - JOURNAL / CARNET</h2>
+            <h2>PROLOGUE</h2>
             <div class="journal-grid">
                 <div class="journal-entry">
                     <div class="entry-date">15 mars 2023</div>
@@ -855,100 +943,140 @@ body.content-revealed {
         </div>
     </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const enterBtn = document.querySelector(".enter-btn");
-    const sequence0 = document.getElementById("sequence-0");
-    const nav = document.getElementById("main-nav");
-    let hasEntered = false;
-    let lastScrollY = window.scrollY;
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const enterBtn = document.querySelector(".enter-btn");
+            const sequence0 = document.getElementById("sequence-0");
+            const nav = document.getElementById("main-nav");
+            let hasEntered = false;
+            let lastScrollY = window.scrollY;
 
-    // Créer des particules pour chaque section
-    createParticles('particles-0', 50);
-    createParticles('particles-1', 30);
-    createParticles('particles-2', 30);
-    createParticles('particles-3', 30);
-    createParticles('particles-4', 30);
-    createParticles('particles-5', 50);
+            // Créer des particules pour chaque section
+            createParticles('particles-0', 50);
+            createParticles('particles-1', 30);
+            createParticles('particles-2', 30);
+            createParticles('particles-3', 30);
+            createParticles('particles-4', 30);
+            createParticles('particles-5', 50);
 
-    // --- FONCTION : Création de particules
-    function createParticles(containerId, count) {
-        const container = document.getElementById(containerId);
-        if (!container) return;
-        
-        for (let i = 0; i < count; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            
-            // Taille aléatoire
-            const size = Math.random() * 5 + 1;
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            
-            // Position aléatoire
-            particle.style.left = `${Math.random() * 100}%`;
-            
-            // Délai d'animation aléatoire
-            particle.style.animationDelay = `${Math.random() * 15}s`;
-            
-            container.appendChild(particle);
-        }
-    }
+            // --- FONCTION : Création de particules
+            function createParticles(containerId, count) {
+                const container = document.getElementById(containerId);
+                if (!container) return;
 
-    // --- FONCTION : Révéler tout le contenu
-function revealContent() {
-    if (hasEntered) return;
-    hasEntered = true;
+                for (let i = 0; i < count; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
 
-    // Effet de fondu sur l'intro
-    sequence0.style.transition = "opacity 2s ease";
-    sequence0.style.opacity = "0";
+                    // Taille aléatoire
+                    const size = Math.random() * 5 + 1;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
 
-    // Révéler la navigation
-    nav.classList.add('visible');
+                    // Position aléatoire
+                    particle.style.left = `${Math.random() * 100}%`;
 
-    // Révéler toutes les autres sections après le fondu
-    setTimeout(() => {
-        // Masquer complètement l'intro
-        sequence0.style.display = "none";
-        
-        // Activer le défilement sur le body
-        document.body.classList.add('content-revealed');
-        
-        // Révéler toutes les autres sections
-        for (let i = 1; i <= 5; i++) {
-            const section = document.getElementById(`sequence-${i}`);
-            if (section) {
-                section.style.display = 'block';
-                // Forcer le reflow pour l'animation
-                void section.offsetWidth;
-                section.classList.add('content-visible');
+                    // Délai d'animation aléatoire
+                    particle.style.animationDelay = `${Math.random() * 15}s`;
+
+                    container.appendChild(particle);
+                }
             }
-        }
-        
-        // Scroll vers le haut pour voir la première section
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 2000);
-}
-    // --- Gestion de la navigation cachée lors du défilement
-    window.addEventListener("scroll", () => {
-        if (!hasEntered) return;
-        
-        if (window.scrollY > lastScrollY && window.scrollY > 100) {
-            // Défilement vers le bas
-            nav.classList.add("hidden");
-        } else {
-            // Défilement vers le haut
-            nav.classList.remove("hidden");
-        }
-        
-        lastScrollY = window.scrollY;
-    });
 
-    // Rendre accessible la fonction dans le HTML inline
-    window.revealContent = revealContent;
-});
-</script>
+            // --- FONCTION : Révéler tout le contenu
+            function revealContent() {
+                if (hasEntered) return;
+                hasEntered = true;
 
+                // Effet de fondu sur l'intro
+                sequence0.style.transition = "opacity 2s ease";
+                sequence0.style.opacity = "0";
+
+                // Arrêter/masquer le crawl si présent
+                const crawl = document.querySelector('.crawl');
+                if (crawl) {
+                    // coupe l'animation et la masque progressivement
+                    crawl.style.transition = 'opacity 0.8s ease';
+                    crawl.style.opacity = '0';
+                    // remove animation to avoid jumpy rendering
+                    crawl.style.animation = 'none';
+                }
+
+                // Révéler la navigation
+                nav.classList.add('visible');
+
+                // Révéler toutes les autres sections après le fondu
+                setTimeout(() => {
+                    // Masquer complètement l'intro
+                    sequence0.style.display = "none";
+
+                    // Activer le défilement sur le body
+                    document.body.classList.add('content-revealed');
+
+                    // Révéler toutes les autres sections
+                    for (let i = 1; i <= 5; i++) {
+                        const section = document.getElementById(`sequence-${i}`);
+                        if (section) {
+                            section.style.display = 'block';
+                            // Forcer le reflow pour l'animation
+                            void section.offsetWidth;
+                            section.classList.add('content-visible');
+                        }
+                    }
+
+                    // Scroll vers le haut pour voir la première section
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 2000);
+            }
+            // --- Gestion de la navigation cachée lors du défilement
+            window.addEventListener("scroll", () => {
+                if (!hasEntered) return;
+
+                if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                    // Défilement vers le bas
+                    nav.classList.add("hidden");
+                } else {
+                    // Défilement vers le haut
+                    nav.classList.remove("hidden");
+                }
+
+                lastScrollY = window.scrollY;
+            });
+
+            // --- Effet : fondu général au scroll (overlay)
+            const scrollFade = document.getElementById('scroll-fade');
+            function updateScrollFade() {
+                if (!scrollFade) return;
+                const max = document.body.scrollHeight - window.innerHeight;
+                if (max <= 0) {
+                    scrollFade.style.background = 'rgba(0,0,0,0)';
+                    return;
+                }
+                // ratio 0..1
+                const ratio = Math.min(1, window.scrollY / max);
+                // map ratio to overlay alpha (0 -> 0, 1 -> 0.65)
+                const alpha = Math.min(0.75, ratio * 0.75);
+                scrollFade.style.background = `rgba(0,0,0,${alpha})`;
+            }
+
+            // update on scroll and on load
+            window.addEventListener('scroll', updateScrollFade, { passive: true });
+            // also trigger after reveal (when content becomes scrollable)
+            const originalReveal = window.revealContent;
+            window.revealContent = function () {
+                originalReveal && originalReveal();
+                // small timeout to allow layout changes
+                setTimeout(updateScrollFade, 50);
+            };
+            // initial
+            updateScrollFade();
+
+            // Rendre accessible la fonction dans le HTML inline
+            window.revealContent = revealContent;
+        });
+    </script>
+<div class="drop-shadow-bottom"></div>
+<div class="scroll-fade-overlay" id="scroll-fade"></div>
 </body>
+
 </html>
