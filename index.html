@@ -1043,34 +1043,6 @@
                 lastScrollY = window.scrollY;
             });
 
-            // --- Effet : fondu général au scroll (overlay)
-            const scrollFade = document.getElementById('scroll-fade');
-            function updateScrollFade() {
-                if (!scrollFade) return;
-                const max = document.body.scrollHeight - window.innerHeight;
-                if (max <= 0) {
-                    scrollFade.style.background = 'rgba(0,0,0,0)';
-                    return;
-                }
-                // ratio 0..1
-                const ratio = Math.min(1, window.scrollY / max);
-                // map ratio to overlay alpha (0 -> 0, 1 -> 0.65)
-                const alpha = Math.min(0.75, ratio * 0.75);
-                scrollFade.style.background = `rgba(0,0,0,${alpha})`;
-            }
-
-            // update on scroll and on load
-            window.addEventListener('scroll', updateScrollFade, { passive: true });
-            // also trigger after reveal (when content becomes scrollable)
-            const originalReveal = window.revealContent;
-            window.revealContent = function () {
-                originalReveal && originalReveal();
-                // small timeout to allow layout changes
-                setTimeout(updateScrollFade, 50);
-            };
-            // initial
-            updateScrollFade();
-
             // Rendre accessible la fonction dans le HTML inline
             window.revealContent = revealContent;
         });
