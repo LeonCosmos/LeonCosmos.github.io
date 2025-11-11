@@ -140,22 +140,52 @@
             <h2>CŒUR DE L'INTRIGUE</h2>
             <p class="section-subtitle">L'évolution de mon parcours créatif à travers les années</p>
 
-            <div class="timeline">
-                <!-- 2023 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-content">
-                        <h3>L'échauffement</h3>
-                        <p class="timeline-subtitle">Premières expérimentations sans formation</p>
-                        <ul class="timeline-skills">
-                            <li>Photos sportives dynamiques</li>
-                            <li>Découvertes des portraits argentiques</li>
-                            <li>Tests de retouches photos</li>
-                            <li>Tentatives de SlowMotion Poétique</li>
-                            <li>Analyse filmique et mixage au travers d'un podcast</li>
-                        </ul>
-                    </div>
-                </div>
+<div class="timeline">
+    <!-- 2023 -->
+    <div class="timeline-item">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-content">
+            <h3>L'échauffement</h3>
+            <p class="timeline-subtitle">Premières expérimentations sans formation</p>
+            <ul class="timeline-skills">
+                <li>
+                    Photos sportives dynamiques
+                    <button class="btn-photos" onclick="openPhotoPopup('sport')">Voir les photos</button>
+                </li>
+                <li>
+                    Découvertes des portraits argentiques
+                    <button class="btn-photos" onclick="openPhotoPopup('argentique')">Voir les photos</button>
+                </li>
+                <li>
+                    Tests de retouches photos
+                    <button class="btn-photos" onclick="openPhotoPopup('retouches')">Voir les photos</button>
+                </li>
+                <li>
+                    Tentatives de SlowMotion Poétique
+                    <button class="btn-photos" onclick="openPhotoPopup('slowmotion')">Voir la vidéo</button>
+                </li>
+                <li>
+                    Analyse filmique et mixage au travers d'un podcast
+                    <button class="btn-photos" onclick="openPhotoPopup('podcast')">Écouter le podcast</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Pop-in pour les photos -->
+<div id="photo-popup" class="photo-popup">
+    <div class="popup-overlay" onclick="closePhotoPopup()"></div>
+    <div class="popup-content">
+        <button class="popup-close" onclick="closePhotoPopup()">
+            <i class="fas fa-times"></i>
+        </button>
+        <h3 id="photo-popup-title"></h3>
+        <div class="photos-grid" id="photos-container">
+            <!-- Les images seront injectées ici par JavaScript -->
+        </div>
+    </div>
+</div>
 
                 <!-- 2024 -->
                 <div class="timeline-item">
