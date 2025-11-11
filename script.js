@@ -42,3 +42,48 @@ document.addEventListener('DOMContentLoaded', function() {
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
 });
+
+
+
+// Fonctions pour gérer la pop-in YouTube
+function openYouTubePopup(videoId, title) {
+    const popup = document.getElementById('youtube-popup');
+    const iframe = document.getElementById('youtube-iframe');
+    const popupTitle = document.getElementById('popup-title');
+    
+    // Mettre à jour le titre
+    popupTitle.textContent = title;
+    
+    // Mettre à jour la source de la vidéo
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    
+    // Afficher la pop-in
+    popup.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Empêcher le défilement
+}
+
+function closeYouTubePopup() {
+    const popup = document.getElementById('youtube-popup');
+    const iframe = document.getElementById('youtube-iframe');
+    
+    // Cacher la pop-in
+    popup.classList.remove('active');
+    document.body.style.overflow = ''; // Rétablir le défilement
+    
+    // Arrêter la vidéo
+    iframe.src = '';
+}
+
+// Fermer avec la touche Échap
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeYouTubePopup();
+    }
+});
+
+// Fermer en cliquant en dehors du contenu
+document.getElementById('youtube-popup').addEventListener('click', function(event) {
+    if (event.target === this) {
+        closeYouTubePopup();
+    }
+});
