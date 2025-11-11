@@ -28,6 +28,133 @@
             --silver: #c0c0c0;
         }
 
+        /* TIMELINE COMPLÈTEMENT RESTRUCTURÉE */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 120px; /* Espace réservé pour les années */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 100px; /* Aligné avec le centre des années */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        transparent, 
+        var(--gold), 
+        var(--gold), 
+        transparent);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    min-height: 120px; /* Hauteur minimale pour chaque item */
+}
+
+.timeline-year {
+    position: absolute;
+    left: -120px; /* Positionné dans l'espace réservé */
+    top: 0;
+    width: 100px;
+    text-align: right;
+    padding-right: 2rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+.timeline-year::after {
+    content: '';
+    position: absolute;
+    right: -11px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+}
+
+.timeline-content {
+    background: rgba(42, 42, 42, 0.7);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    backdrop-filter: blur(5px);
+    transition: all 0.4s ease;
+}
+
+.timeline-content:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* Ajustements responsive */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 80px;
+    }
+    
+    .timeline::before {
+        left: 60px;
+    }
+    
+    .timeline-year {
+        left: -80px;
+        width: 60px;
+        padding-right: 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .timeline-year::after {
+        right: -8px;
+    }
+    
+    .timeline-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline {
+        padding-left: 0;
+    }
+    
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-year {
+        position: relative;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        padding-right: 0;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .timeline-year::after {
+        left: 0;
+        right: auto;
+        top: auto;
+        bottom: 5px;
+    }
+    
+    .timeline-item {
+        min-height: auto;
+        padding-left: 40px; /* Espace pour la ligne */
+    }
+}
+
         * {
             margin: 0;
             padding: 0;
@@ -1207,7 +1334,7 @@
 .timeline::before {
     content: '';
     position: absolute;
-    left: 50px;
+    left: 100px; /* Ajusté pour être aligné avec le centre des années */
     top: 0;
     bottom: 0;
     width: 2px;
@@ -1216,13 +1343,13 @@
         var(--gold), 
         var(--gold), 
         transparent);
-    transform: translateX(-50%);
 }
 
 .timeline-item {
     display: flex;
     margin-bottom: 3rem;
     position: relative;
+    align-items: flex-start; /* Assure l'alignement en haut */
 }
 
 .timeline-year {
@@ -1239,7 +1366,7 @@
 .timeline-year::after {
     content: '';
     position: absolute;
-    right: -6px;
+    right: -11px; /* Ajusté pour être centré sur la ligne */
     top: 50%;
     transform: translateY(-50%);
     width: 12px;
@@ -1247,6 +1374,53 @@
     background: var(--gold);
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+}
+
+/* Ajustement responsive pour la timeline */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 60px; /* Ajusté pour mobile */
+    }
+    
+    .timeline-year {
+        flex: 0 0 60px;
+        padding-right: 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .timeline-year::after {
+        right: -8px; /* Ajusté pour mobile */
+    }
+    
+    .timeline-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-year {
+        text-align: left;
+        padding-right: 0;
+        padding-bottom: 1rem;
+        flex: none;
+        width: 100%;
+    }
+    
+    .timeline-year::after {
+        left: 0;
+        right: auto;
+        top: auto;
+        bottom: 5px;
+        transform: none;
+    }
+    
+    .timeline::before {
+        left: 15px;
+    }
 }
 
 .timeline-content {
@@ -1257,6 +1431,7 @@
     border: 1px solid rgba(212, 175, 55, 0.3);
     backdrop-filter: blur(5px);
     transition: all 0.4s ease;
+    margin-top: 0; /* Supprime tout décalage en haut */
 }
 
 .timeline-content:hover {
@@ -2022,7 +2197,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    min-height: 40px; /* Hauteur minimale pour l'alignement */
 }
+
+/* Sur mobile, empiler le contenu */
+@media (max-width: 768px) {
+    .timeline-skills li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        min-height: auto;
+    }
+    
+    .btn-photos {
+        margin-left: 0;
+        align-self: flex-end;
+        margin-top: 0.5rem;
+    }
+}
+
 
 /* Styles pour la pop-in photos */
 .photo-popup {

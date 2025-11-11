@@ -140,334 +140,343 @@
             <h2>CŒUR DE L'INTRIGUE</h2>
             <p class="section-subtitle">L'évolution de mon parcours créatif à travers les années</p>
 
-<div class="timeline">
-    <!-- 2023 -->
-    <div class="timeline-item">
-        <div class="timeline-year">2023</div>
-        <div class="timeline-content">
-            <h3>L'échauffement</h3>
-            <p class="timeline-subtitle">Premières expérimentations sans formation</p>
-            <ul class="timeline-skills">
-                <li>
-                    Photos sportives dynamiques
-                    <button class="btn-photos" onclick="openPhotoPopup('sport')">Voir les photos</button>
-                </li>
-                <li>
-                    Découvertes des portraits argentiques
-                    <button class="btn-photos" onclick="openPhotoPopup('argentique')">Voir les photos</button>
-                </li>
-                <li>
-                    Tests de retouches photos
-                    <button class="btn-photos" onclick="openPhotoPopup('retouches')">Voir les photos</button>
-                </li>
-                <li>
-                    Tentatives de SlowMotion Poétique
-                    <button class="btn-photos" onclick="openPhotoPopup('slowmotion')">Voir la vidéo</button>
-                </li>
-                <li>
-                    Analyse filmique et mixage au travers d'un podcast
-                    <button class="btn-photos" onclick="openPhotoPopup('podcast')">Écouter le podcast</button>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<!-- Pop-in pour les photos -->
-<div id="photo-popup" class="photo-popup">
-    <div class="popup-overlay" onclick="closePhotoPopup()"></div>
-    <div class="popup-content">
-        <button class="popup-close" onclick="closePhotoPopup()">
-            <i class="fas fa-times"></i>
-        </button>
-        <h3 id="photo-popup-title"></h3>
-        <div class="photos-grid" id="photos-container">
-            <!-- Les images seront injectées ici par JavaScript -->
-        </div>
-    </div>
-</div>
-
-                <!-- 2024 -->
+            <div class="timeline">
+                <!-- 2023 -->
                 <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
+                    <div class="timeline-year">2023</div>
                     <div class="timeline-content">
-                        <h3>Les débuts</h3>
-                        <p class="timeline-subtitle">Premiers projets aboutis dans l'objectif de se former</p>
-
-                        <div class="project-links">
-                            <div class="project-link">
-                                <h4>La Gru N°11</h4>
-                                <p>Réinterprète la grue jaune de l'Île de Nantes, symbole industriel, à travers un
-                                    diaporama mêlant photos retouchées et sound design immersif.</p>
-                                <div class="youtube-thumbnail-container"
-                                    onclick="openYouTubePopup('OwLYei7CRNQ', 'La Gru N°11')">
-                                    <img src="https://img.youtube.com/vi/OwLYei7CRNQ/maxresdefault.jpg"
-                                        alt="La Gru N°11" class="youtube-thumbnail"
-                                        onerror="this.src='https://img.youtube.com/vi/OwLYei7CRNQ/hqdefault.jpg'">
-                                    <div class="youtube-play-button">
-                                        <i class="fab fa-youtube"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-link">
-                                <h4>Pour toi</h4>
-                                <p>Court métrage de fiction librement inspiré de l'histoire de Marianne Bachmeier,
-                                    mêlant thriller et écriture visuelle sombre, réalisé par une équipe de huit
-                                    personnes.</p>
-                                <div class="youtube-thumbnail-container"
-                                    onclick="openYouTubePopup('GTET1SH5tsk', 'Pour toi')">
-                                    <img src="https://img.youtube.com/vi/GTET1SH5tsk/maxresdefault.jpg" alt="Pour toi"
-                                        class="youtube-thumbnail"
-                                        onerror="this.src='https://img.youtube.com/vi/GTET1SH5tsk/hqdefault.jpg'">
-                                    <div class="youtube-play-button">
-                                        <i class="fab fa-youtube"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <h3>L'échauffement</h3>
+                        <p class="timeline-subtitle">Premières expérimentations sans formation</p>
+                        <ul class="timeline-skills">
+                            <li>
+                                Photos sportives dynamiques
+                                <button class="btn-photos" onclick="openPhotoPopup('sport')">Voir les photos</button>
+                            </li>
+                            <li>
+                                Découvertes des portraits argentiques
+                                <button class="btn-photos" onclick="openPhotoPopup('argentique')">Voir les
+                                    photos</button>
+                            </li>
+                            <li>
+                                Tests de retouches photos
+                                <button class="btn-photos" onclick="openPhotoPopup('retouches')">Voir les
+                                    photos</button>
+                            </li>
+                            <li>
+                                Tentatives de SlowMotion Poétique
+                                <button class="btn-photos" onclick="openPhotoPopup('slowmotion')">Voir la vidéo</button>
+                            </li>
+                            <li>
+                                Analyse filmique et mixage au travers d'un podcast
+                                <button class="btn-photos" onclick="openPhotoPopup('podcast')">Écouter le
+                                    podcast</button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Pop-in YouTube (garder le même code) -->
-                <div id="youtube-popup" class="youtube-popup">
-                    <div class="popup-overlay" onclick="closeYouTubePopup()"></div>
-                    <div class="popup-content">
-                        <button class="popup-close" onclick="closeYouTubePopup()">
-                            <i class="fas fa-times"></i>
-                        </button>
-                        <h3 id="popup-title"></h3>
-                        <div class="video-container">
-                            <iframe id="youtube-iframe" width="100%" height="100%" src="" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
+            <!-- Pop-in pour les photos -->
+            <div id="photo-popup" class="photo-popup">
+                <div class="popup-overlay" onclick="closePhotoPopup()"></div>
+                <div class="popup-content">
+                    <button class="popup-close" onclick="closePhotoPopup()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <h3 id="photo-popup-title"></h3>
+                    <div class="photos-grid" id="photos-container">
+                        <!-- Les images seront injectées ici par JavaScript -->
                     </div>
-                </div>
-
-                <!-- 2025 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-content">
-                        <h3>La persévérance</h3>
-                        <p class="timeline-subtitle">Exploration plus profonde de mes compétences et mise en œuvre de
-                            savoirs acquis</p>
-
-                        <div class="project-links">
-                            <div class="project-link">
-                                <h4>A La Manière De Black Swan</h4>
-                                <p>Exercice consistant à recréer à l'identique une séquence de film, alliant mise en
-                                    scène ambitieuse, travail de décor intense et première expérience de tournage en
-                                    grande équipe.</p>
-                                <div class="youtube-thumbnail-container"
-                                    onclick="openYouTubePopup('_L6m8S9bfU4', 'A La Manière De Black Swan')">
-                                    <img src="https://img.youtube.com/vi/_L6m8S9bfU4/maxresdefault.jpg"
-                                        alt="A La Manière De Black Swan" class="youtube-thumbnail"
-                                        onerror="this.src='https://img.youtube.com/vi/_L6m8S9bfU4/hqdefault.jpg'">
-                                    <div class="youtube-play-button">
-                                        <i class="fab fa-youtube"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-link">
-                                <h4>Inertia</h4>
-                                <p>Court métrage expérimental sur la consommation énergétique moderne, réalisé en une
-                                    journée par une petite équipe, avec une forte identité visuelle et des partis pris
-                                    esthétiques audacieux.</p>
-                                <div class="youtube-thumbnail-container"
-                                    onclick="openYouTubePopup('jnPipvgP-_0', 'Inertia')">
-                                    <img src="https://img.youtube.com/vi/jnPipvgP-_0/maxresdefault.jpg" alt="Inertia"
-                                        class="youtube-thumbnail"
-                                        onerror="this.src='https://img.youtube.com/vi/jnPipvgP-_0/hqdefault.jpg'">
-                                    <div class="youtube-play-button">
-                                        <i class="fab fa-youtube"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-link">
-                                <h4>Coquelicot Rouge Sang</h4>
-                                <p>Comédie de fiction co-réalisée, explorant l'imaginaire et les enjeux énergétiques et
-                                    écologiques à travers une collaboration artistique enrichissante.</p>
-                                <div class="youtube-thumbnail-container"
-                                    onclick="openYouTubePopup('2ejPffDfcNI', 'Coquelicot Rouge Sang')">
-                                    <img src="https://img.youtube.com/vi/2ejPffDfcNI/maxresdefault.jpg"
-                                        alt="Coquelicot Rouge Sang" class="youtube-thumbnail"
-                                        onerror="this.src='https://img.youtube.com/vi/2ejPffDfcNI/hqdefault.jpg'">
-                                    <div class="youtube-play-button">
-                                        <i class="fab fa-youtube"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-link">
-                                <h4>Entre deux regards</h4>
-                                <p>Court-métrage de fiction explorant la jalousie, l'enfermement psychologique et la
-                                    vengeance, premier volet d'un triptyque.</p>
-                                <div class="youtube-thumbnail-container"
-                                    onclick="openYouTubePopup('PTpgvupg9oM', 'Entre deux regards')">
-                                    <img src="https://img.youtube.com/vi/PTpgvupg9oM/maxresdefault.jpg"
-                                        alt="Entre deux regards" class="youtube-thumbnail"
-                                        onerror="this.src='https://img.youtube.com/vi/PTpgvupg9oM/hqdefault.jpg'">
-                                    <div class="youtube-play-button">
-                                        <i class="fab fa-youtube"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-link">
-                                <h4>Maggie</h4>
-                                <p>Deuxième volet du triptyque, dépeint la détresse d'un agriculteur isolé jusqu'au
-                                    drame ; prix du public au festival d'Annemasse 2025.</p>
-                                <div class="youtube-thumbnail-container"
-                                    onclick="openYouTubePopup('-u2DXhKS4sU', 'Maggie')">
-                                    <img src="https://img.youtube.com/vi/-u2DXhKS4sU/maxresdefault.jpg" alt="Maggie"
-                                        class="youtube-thumbnail"
-                                        onerror="this.src='https://img.youtube.com/vi/-u2DXhKS4sU/hqdefault.jpg'">
-                                    <div class="youtube-play-button">
-                                        <i class="fab fa-youtube"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-link">
-                                <h4>Les cicatrices</h4>
-                                <p>Clôt le triptyque de fin de cycle en plongeant dans l'introspection d'un chirurgien
-                                    marqué par la perte d'un patient ; première expérience en tant que scripte.</p>
-                                <div class="youtube-thumbnail-container"
-                                    onclick="openYouTubePopup('1oFlqO3otlI', 'Les cicatrices')">
-                                    <img src="https://img.youtube.com/vi/1oFlqO3otlI/maxresdefault.jpg"
-                                        alt="Les cicatrices" class="youtube-thumbnail"
-                                        onerror="this.src='https://img.youtube.com/vi/1oFlqO3otlI/hqdefault.jpg'">
-                                    <div class="youtube-play-button">
-                                        <i class="fab fa-youtube"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-link">
-                                <h4>Publicité Poker</h4>
-                                <p>Fausse publicité pour du poker en ligne, exercice de montage complet réalisé seul du
-                                    dérush à la postproduction.</p>
-                                <div class="youtube-thumbnail-container"
-                                    onclick="openYouTubePopup('XIUMGSRAiNw', 'Publicité Poker')">
-                                    <img src="https://img.youtube.com/vi/XIUMGSRAiNw/maxresdefault.jpg"
-                                        alt="Publicité Poker" class="youtube-thumbnail"
-                                        onerror="this.src='https://img.youtube.com/vi/XIUMGSRAiNw/hqdefault.jpg'">
-                                    <div class="youtube-play-button">
-                                        <i class="fab fa-youtube"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
+
+            <!-- 2024 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                    <h3>Les débuts</h3>
+                    <p class="timeline-subtitle">Premiers projets aboutis dans l'objectif de se former</p>
+
+                    <div class="project-links">
+                        <div class="project-link">
+                            <h4>La Gru N°11</h4>
+                            <p>Réinterprète la grue jaune de l'Île de Nantes, symbole industriel, à travers un
+                                diaporama mêlant photos retouchées et sound design immersif.</p>
+                            <div class="youtube-thumbnail-container"
+                                onclick="openYouTubePopup('OwLYei7CRNQ', 'La Gru N°11')">
+                                <img src="https://img.youtube.com/vi/OwLYei7CRNQ/maxresdefault.jpg" alt="La Gru N°11"
+                                    class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/OwLYei7CRNQ/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-link">
+                            <h4>Pour toi</h4>
+                            <p>Court métrage de fiction librement inspiré de l'histoire de Marianne Bachmeier,
+                                mêlant thriller et écriture visuelle sombre, réalisé par une équipe de huit
+                                personnes.</p>
+                            <div class="youtube-thumbnail-container"
+                                onclick="openYouTubePopup('GTET1SH5tsk', 'Pour toi')">
+                                <img src="https://img.youtube.com/vi/GTET1SH5tsk/maxresdefault.jpg" alt="Pour toi"
+                                    class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/GTET1SH5tsk/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pop-in YouTube (garder le même code) -->
+            <div id="youtube-popup" class="youtube-popup">
+                <div class="popup-overlay" onclick="closeYouTubePopup()"></div>
+                <div class="popup-content">
+                    <button class="popup-close" onclick="closeYouTubePopup()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <h3 id="popup-title"></h3>
+                    <div class="video-container">
+                        <iframe id="youtube-iframe" width="100%" height="100%" src="" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2025 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-content">
+                    <h3>La persévérance</h3>
+                    <p class="timeline-subtitle">Exploration plus profonde de mes compétences et mise en œuvre de
+                        savoirs acquis</p>
+
+                    <div class="project-links">
+                        <div class="project-link">
+                            <h4>A La Manière De Black Swan</h4>
+                            <p>Exercice consistant à recréer à l'identique une séquence de film, alliant mise en
+                                scène ambitieuse, travail de décor intense et première expérience de tournage en
+                                grande équipe.</p>
+                            <div class="youtube-thumbnail-container"
+                                onclick="openYouTubePopup('_L6m8S9bfU4', 'A La Manière De Black Swan')">
+                                <img src="https://img.youtube.com/vi/_L6m8S9bfU4/maxresdefault.jpg"
+                                    alt="A La Manière De Black Swan" class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/_L6m8S9bfU4/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-link">
+                            <h4>Inertia</h4>
+                            <p>Court métrage expérimental sur la consommation énergétique moderne, réalisé en une
+                                journée par une petite équipe, avec une forte identité visuelle et des partis pris
+                                esthétiques audacieux.</p>
+                            <div class="youtube-thumbnail-container"
+                                onclick="openYouTubePopup('jnPipvgP-_0', 'Inertia')">
+                                <img src="https://img.youtube.com/vi/jnPipvgP-_0/maxresdefault.jpg" alt="Inertia"
+                                    class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/jnPipvgP-_0/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-link">
+                            <h4>Coquelicot Rouge Sang</h4>
+                            <p>Comédie de fiction co-réalisée, explorant l'imaginaire et les enjeux énergétiques et
+                                écologiques à travers une collaboration artistique enrichissante.</p>
+                            <div class="youtube-thumbnail-container"
+                                onclick="openYouTubePopup('2ejPffDfcNI', 'Coquelicot Rouge Sang')">
+                                <img src="https://img.youtube.com/vi/2ejPffDfcNI/maxresdefault.jpg"
+                                    alt="Coquelicot Rouge Sang" class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/2ejPffDfcNI/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-link">
+                            <h4>Entre deux regards</h4>
+                            <p>Court-métrage de fiction explorant la jalousie, l'enfermement psychologique et la
+                                vengeance, premier volet d'un triptyque.</p>
+                            <div class="youtube-thumbnail-container"
+                                onclick="openYouTubePopup('PTpgvupg9oM', 'Entre deux regards')">
+                                <img src="https://img.youtube.com/vi/PTpgvupg9oM/maxresdefault.jpg"
+                                    alt="Entre deux regards" class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/PTpgvupg9oM/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-link">
+                            <h4>Maggie</h4>
+                            <p>Deuxième volet du triptyque, dépeint la détresse d'un agriculteur isolé jusqu'au
+                                drame ; prix du public au festival d'Annemasse 2025.</p>
+                            <div class="youtube-thumbnail-container"
+                                onclick="openYouTubePopup('-u2DXhKS4sU', 'Maggie')">
+                                <img src="https://img.youtube.com/vi/-u2DXhKS4sU/maxresdefault.jpg" alt="Maggie"
+                                    class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/-u2DXhKS4sU/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-link">
+                            <h4>Les cicatrices</h4>
+                            <p>Clôt le triptyque de fin de cycle en plongeant dans l'introspection d'un chirurgien
+                                marqué par la perte d'un patient ; première expérience en tant que scripte.</p>
+                            <div class="youtube-thumbnail-container"
+                                onclick="openYouTubePopup('1oFlqO3otlI', 'Les cicatrices')">
+                                <img src="https://img.youtube.com/vi/1oFlqO3otlI/maxresdefault.jpg" alt="Les cicatrices"
+                                    class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/1oFlqO3otlI/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-link">
+                            <h4>Publicité Poker</h4>
+                            <p>Fausse publicité pour du poker en ligne, exercice de montage complet réalisé seul du
+                                dérush à la postproduction.</p>
+                            <div class="youtube-thumbnail-container"
+                                onclick="openYouTubePopup('XIUMGSRAiNw', 'Publicité Poker')">
+                                <img src="https://img.youtube.com/vi/XIUMGSRAiNw/maxresdefault.jpg"
+                                    alt="Publicité Poker" class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/XIUMGSRAiNw/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
     </section>
 
     <!-- SÉQUENCE 4 - JOURNAL / CARNET -->
-<section id="sequence-4">
-    <div class="sequence-bg"></div>
-    <div class="particles" id="particles-4"></div>
-    <div class="container">
-        <h2>PROLOGUE</h2>
-        
-        <div class="prologue-grid">
-            <!-- Critique -->
-            <div class="prologue-card critique-card">
-                <div class="card-header">
-                    <h3>Dernière Critique</h3>
-                    <div class="entry-date">La French (Cédric Jimenez, 2014)</div>
-                </div>
-                <div class="critique-content">
-                    <p class="critique-excerpt">
-                        "Dans La French, j'ai trouvé un polar à la fois haletant et imparfait : un film qui, sans révolutionner le genre, l'incarne avec sincérité et style. La lumière et le grain donnent à Marseille une âme singulière, entre réalisme brut et mystique urbaine. Si Jimenez échoue parfois à doser ses émotions et à approfondir ses personnages secondaires, il compense par une mise en scène habitée, portée par un vrai sens du rythme et du cadre. Un cinéma d'ambition, qui préfère viser haut quitte à rater parfois — et c'est aussi pour ça qu'il mérite qu'on s'y attarde."
-                    </p>
-                    <a href="https://boxd.it/btlBd3" target="_blank" class="btn-letterboxd">
-                        <i class="fas fa-external-link-alt"></i>
-                        Lire l'analyse complète sur Letterboxd
-                    </a>
-                </div>
-            </div>
+    <section id="sequence-4">
+        <div class="sequence-bg"></div>
+        <div class="particles" id="particles-4"></div>
+        <div class="container">
+            <h2>PROLOGUE</h2>
 
-            <!-- Inspirations -->
-            <div class="prologue-card inspirations-card">
-                <div class="card-header">
-                    <h3>Mes Inspirations</h3>
-                </div>
-                <div class="inspirations-content">
-                    <div class="inspiration-image">
-                        <!-- Remplacez par votre image d'inspiration -->
-                        <div class="image-placeholder">
-                            <img src="assets/moodboard.png" alt="moodboard" style="width: 100%;">
-                        </div>
+            <div class="prologue-grid">
+                <!-- Critique -->
+                <div class="prologue-card critique-card">
+                    <div class="card-header">
+                        <h3>Dernière Critique</h3>
+                        <div class="entry-date">La French (Cédric Jimenez, 2014)</div>
                     </div>
-                    <p class="inspiration-text">
-                        Sources d'inspiration visuelle et narrative qui influencent mon travail créatif
-                    </p>
-                </div>
-            </div>
-
-            <!-- TOP 1 -->
-            <div class="prologue-card top1-card">
-                <div class="card-header">
-                    <h3>Mes TOP 1</h3>
-                </div>
-                <div class="top1-content">
-                    <div class="top1-item">
-                        <span class="top1-category">Film</span>
-                        <div class="youtube-thumbnail-container small" onclick="openYouTubePopup('MNXRV-OspoY', 'Top 1 Film')">
-                            <img src="https://img.youtube.com/vi/MNXRV-OspoY/maxresdefault.jpg" 
-                                 alt="Top 1 Film" 
-                                 class="youtube-thumbnail"
-                                 onerror="this.src='https://img.youtube.com/vi/MNXRV-OspoY/hqdefault.jpg'">
-                            <div class="youtube-play-button">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="top1-item">
-                        <span class="top1-category">Série</span>
-                        <div class="youtube-thumbnail-container small" onclick="openYouTubePopup('LNqJnZl4imQ', 'Top 1 Série')">
-                            <img src="https://img.youtube.com/vi/LNqJnZl4imQ/maxresdefault.jpg" 
-                                 alt="Top 1 Série" 
-                                 class="youtube-thumbnail"
-                                 onerror="this.src='https://img.youtube.com/vi/LNqJnZl4imQ/hqdefault.jpg'">
-                            <div class="youtube-play-button">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="top1-item">
-                        <span class="top1-category">Musique</span>
-                        <div class="youtube-thumbnail-container small" onclick="openYouTubePopup('XFkzRNyygfk', 'Top 1 Musique')">
-                            <img src="https://img.youtube.com/vi/XFkzRNyygfk/maxresdefault.jpg" 
-                                 alt="Top 1 Musique" 
-                                 class="youtube-thumbnail"
-                                 onerror="this.src='https://img.youtube.com/vi/XFkzRNyygfk/hqdefault.jpg'">
-                            <div class="youtube-play-button">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="top1-item">
-                        <span class="top1-category">Livre</span>
-                        <a href="https://fr.wikipedia.org/wiki/Antigone_(Anouilh)" target="_blank" class="top1-link">
-                            <i class="fas fa-book"></i>
-                            Antigone - Jean Anouilh
+                    <div class="critique-content">
+                        <p class="critique-excerpt">
+                            "Dans La French, j'ai trouvé un polar à la fois haletant et imparfait : un film qui, sans
+                            révolutionner le genre, l'incarne avec sincérité et style. La lumière et le grain donnent à
+                            Marseille une âme singulière, entre réalisme brut et mystique urbaine. Si Jimenez échoue
+                            parfois à doser ses émotions et à approfondir ses personnages secondaires, il compense par
+                            une mise en scène habitée, portée par un vrai sens du rythme et du cadre. Un cinéma
+                            d'ambition, qui préfère viser haut quitte à rater parfois — et c'est aussi pour ça qu'il
+                            mérite qu'on s'y attarde."
+                        </p>
+                        <a href="https://boxd.it/btlBd3" target="_blank" class="btn-letterboxd">
+                            <i class="fas fa-external-link-alt"></i>
+                            Lire l'analyse complète sur Letterboxd
                         </a>
                     </div>
-                    
-                    <div class="top1-item">
-                        <span class="top1-category">Photo</span>
-                        <div class="photo-placeholder">
-                            <img src="assets/fav.png" alt="Photographie favorite" style="width: 100%;">
+                </div>
+
+                <!-- Inspirations -->
+                <div class="prologue-card inspirations-card">
+                    <div class="card-header">
+                        <h3>Mes Inspirations</h3>
+                    </div>
+                    <div class="inspirations-content">
+                        <div class="inspiration-image">
+                            <!-- Remplacez par votre image d'inspiration -->
+                            <div class="image-placeholder">
+                                <img src="assets/moodboard.png" alt="moodboard" style="width: 100%;">
+                            </div>
+                        </div>
+                        <p class="inspiration-text">
+                            Sources d'inspiration visuelle et narrative qui influencent mon travail créatif
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TOP 1 -->
+                <div class="prologue-card top1-card">
+                    <div class="card-header">
+                        <h3>Mes TOP 1</h3>
+                    </div>
+                    <div class="top1-content">
+                        <div class="top1-item">
+                            <span class="top1-category">Film</span>
+                            <div class="youtube-thumbnail-container small"
+                                onclick="openYouTubePopup('MNXRV-OspoY', 'Top 1 Film')">
+                                <img src="https://img.youtube.com/vi/MNXRV-OspoY/maxresdefault.jpg" alt="Top 1 Film"
+                                    class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/MNXRV-OspoY/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="top1-item">
+                            <span class="top1-category">Série</span>
+                            <div class="youtube-thumbnail-container small"
+                                onclick="openYouTubePopup('LNqJnZl4imQ', 'Top 1 Série')">
+                                <img src="https://img.youtube.com/vi/LNqJnZl4imQ/maxresdefault.jpg" alt="Top 1 Série"
+                                    class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/LNqJnZl4imQ/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="top1-item">
+                            <span class="top1-category">Musique</span>
+                            <div class="youtube-thumbnail-container small"
+                                onclick="openYouTubePopup('XFkzRNyygfk', 'Top 1 Musique')">
+                                <img src="https://img.youtube.com/vi/XFkzRNyygfk/maxresdefault.jpg" alt="Top 1 Musique"
+                                    class="youtube-thumbnail"
+                                    onerror="this.src='https://img.youtube.com/vi/XFkzRNyygfk/hqdefault.jpg'">
+                                <div class="youtube-play-button">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="top1-item">
+                            <span class="top1-category">Livre</span>
+                            <a href="https://fr.wikipedia.org/wiki/Antigone_(Anouilh)" target="_blank"
+                                class="top1-link">
+                                <i class="fas fa-book"></i>
+                                Antigone - Jean Anouilh
+                            </a>
+                        </div>
+
+                        <div class="top1-item">
+                            <span class="top1-category">Photo</span>
+                            <div class="photo-placeholder">
+                                <img src="assets/fav.png" alt="Photographie favorite" style="width: 100%;">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- SÉQUENCE 5 - CONTACT -->
     <section id="sequence-5">
@@ -481,21 +490,24 @@
                 <p>louis.lerouzic06@outlook.fr</p>
             </div>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/louislerouzic" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/g_olden_louis/" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@louislerouzic7144" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/louislerouzic" class="social-link"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/g_olden_louis/" class="social-link"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@louislerouzic7144" class="social-link"><i
+                        class="fab fa-youtube"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Bulle Portfolio Développeur -->
-<div class="dev-portfolio-bubble">
-    <a href="#" class="dev-bubble-link sobre" title="Désign et développement par Romain C.">
-        <div class="dev-bubble-icon">
-            <i class="fas fa-code"></i>
-        </div>
-    </a>
-</div>
+    <div class="dev-portfolio-bubble">
+        <a href="#" class="dev-bubble-link sobre" title="Désign et développement par Romain C.">
+            <div class="dev-bubble-icon">
+                <i class="fas fa-code"></i>
+            </div>
+        </a>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
